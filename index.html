@@ -1,0 +1,93 @@
+﻿<!doctype html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Search Pokemon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" href="images/pokeball.png">
+
+    <link href="https://fonts.googleapis.com/css?family=David+Libre&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+
+    <div class="searchContainer">
+        <h1>Search Pokemon</h1>
+        <input type="text" placeholder="Search A Pokemon" id="search" />
+    </div>
+
+    <div class="spinnerWrapper">
+        <div class="loader loader-1">
+            <div class="loader-outter"></div>
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="genContainer">
+            <div>
+                <img src="./images/gen0.png" alt="pokeball" onclick="genClick(0)" />
+            </div>
+            <div>
+                <img src="./images/gen1.png" alt="pokeball" onclick="genClick(1)" />
+            </div>
+            <div>
+                <img src="./images/gen2.png" alt="pokeball" onclick="genClick(2)" id="gen2Img"/>
+            </div>
+            <div>
+                <img src="./images/gen3.png" alt="pokeball" onclick="genClick(3)" id="gen3Img" />
+            </div>
+            <div>
+                <img src="./images/gen4.png" alt="pokeball" onclick="genClick(4)" id="gen4Img" />
+            </div>
+            <div>
+                <img src="./images/gen5.png" alt="pokeball" onclick="genClick(5)" id="gen5Img" />
+            </div>
+            <div>
+                <img src="./images/gen6.png" alt="pokeball" onclick="genClick(6)" id="gen6Img" />
+            </div>
+            <div>
+                <img src="./images/gen7.png" alt="pokeball" onclick="genClick(7)" id="gen7Img" />
+            </div>
+           
+        </div>
+
+        <div class="cubeContainer">
+            <div class="cube cube1"></div>
+            <div class="cube cube2"></div>
+            <div class="cube cube3"></div>
+            <div class="cube cube4"></div>
+            <div class="cube cube5"></div>
+            <div class="cube cube6"></div>
+            <div class="cube cube7"></div>
+            <div class="cube cube8"></div>
+            <div class="cube cube9"></div>
+        </div>
+
+    </div>
+
+    <img src="images/upBtn.png" alt="up arrow" class="goToTopBtn" onclick="goToTop()" />
+
+    <!----------------POPUPS---------------->
+    <!------------Country Details----------->
+
+    <div id="pokemonDetails" class="popUpInfo">
+        <div class="popupCont">
+            <div class="Xbtn"></div>
+            <h2 class="pokemonNamePop"></h2>
+            <p class="pokemonTypes"></p>
+
+            <div class="popupBtnsWrapper">
+                <button class="popupBtn" id="" onclick="closeCurrentPopup($(this))">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
