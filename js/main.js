@@ -1,4 +1,4 @@
-﻿
+
 var pokemonUrl = 'https://pokeapi.co/api/v2/pokemon';
 var pokemonSpeciesUrl = 'https://pokeapi.co/api/v2/pokemon-species';
 
@@ -295,7 +295,7 @@ function getEvolutionsInfo(gen) {
             }).appendTo(evolutionWrapper);
 
             var loader = $('<div>', {
-                class: 'loader loader-2',
+                class: 'loader2 loader-2',
             }).appendTo(spinnerWrapper2);
 
             var loaderOutter = $('<div>', {
