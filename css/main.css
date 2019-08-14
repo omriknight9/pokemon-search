@@ -1,4 +1,4 @@
-﻿
+
 @font-face {
   font-family: 'pokefont';
   src: url('../fonts/Pokemon_Solid.ttf');
@@ -178,11 +178,10 @@ h1 {
 
 .spinnerWrapper2 {
     position: absolute;
-    /*top: 11rem;*/
+    bottom: 1rem;
     width: 100%;
     display: inline-block;
     text-align: center;
-    min-height: 215px;
     vertical-align: top;
     margin: 1%;
 }
@@ -193,6 +192,15 @@ h1 {
     height: 60px;
     border-radius: 50%;
     margin: 75px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loader2 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
 }
@@ -352,6 +360,7 @@ h1 {
 }
 
 .pokemonContainer {
+    position: relative;
     display: none;
     width: 20rem;
     height: 22rem;
@@ -382,7 +391,6 @@ h1 {
 }
 
 .evolutionWrapper {
-    position: relative;
     display: flex;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
