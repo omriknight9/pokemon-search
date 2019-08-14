@@ -353,7 +353,6 @@ function sortChildrenDivsById(parentId) {
     }
 }
 
-
 function removePopup(container) {
 
     $(document).mouseup(function (e) {
