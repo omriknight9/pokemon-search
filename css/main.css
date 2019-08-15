@@ -173,7 +173,6 @@ h1 {
     text-align: center;
     min-height: 215px;
     vertical-align: top;
-    margin: 1%;
 }
 
 .spinnerWrapper2 {
@@ -183,7 +182,6 @@ h1 {
     display: inline-block;
     text-align: center;
     vertical-align: top;
-    margin: 1%;
 }
 
 .loader {
