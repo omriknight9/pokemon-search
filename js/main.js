@@ -150,10 +150,7 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
                     $('.pokemonNamePop').html(capitalize(json.name));
                     $('.pokemonTypes').html(typesPopup);
                     $('#pokemonDetails .popupCont').css({ 'background-image': 'url(' + json.sprites.front_default + ')', 'background-repeat': 'no-repeat', 'background-position': 'top' });
-
-                    console.log($(this));
                     getEvolutionsInfo($(this));
-
                 },
                 'pokemonId': json.id
 
@@ -180,10 +177,6 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
     setTimeout(function () {
         getEvolutions(gen);
     }, 3500);
-
-    //setTimeout(function () {
-    //    getEvolutionsInfo(gen);
-    //}, 5000);
 }
 
 function capitalize(str) {
@@ -294,15 +287,19 @@ function getEvolutionsInfo(that) {
     if (evolutionFrom !== undefined) {
         $.get(pokemonUrl + '/' + evolutionFrom, function (json) {
 
-            $('#firstEvolution').attr('src', json.sprites.front_default).fadeIn(500);;
+            $('#firstEvolution').attr('src', json.sprites.front_default).fadeIn(500);
         });
+    } else {
+        $('#firstEvolution').hide();
     }
 
     if (evolutionTo !== undefined) {
         $.get(pokemonUrl + '/' + evolutionTo, function (json) {
-            $('#secondEvolution').attr('src', json.sprites.front_default).fadeIn(500);;
-        })
-    }   
+            $('#secondEvolution').attr('src', json.sprites.front_default).fadeIn(500);
+        });
+    } else {
+        $('#secondEvolution').hide();
+    }
 }
 
 function sortChildrenDivsById(parentId) {
