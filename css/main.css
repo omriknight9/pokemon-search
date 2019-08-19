@@ -453,6 +453,9 @@ h1 {
 }
 
 .popupBtnsWrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
     margin-top: 2rem;
     text-align: center;
 }
