@@ -167,6 +167,7 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
 
             var pokemonImg = $('<img>', {
                 class: 'pokemonImg',
+                alt: 'pokemonImg',
                 src: json.sprites.front_default
             }).appendTo(pokemonContainer);
         })
