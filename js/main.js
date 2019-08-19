@@ -176,7 +176,7 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
 
     setTimeout(function () {
         getEvolutions(gen);
-    }, 3500);
+    }, 2500);
 }
 
 function capitalize(str) {
@@ -278,6 +278,8 @@ function getEvolutions(gen) {
 
 function getEvolutionsInfo(that) {
 
+    $('#firstEvolution').hide();
+    $('#secondEvolution').hide();
     $('#firstEvolution').attr('src', '');
     $('#secondEvolution').attr('src', '');
 
