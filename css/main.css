@@ -361,7 +361,8 @@ h1 {
     position: relative;
     display: none;
     width: 20rem;
-    height: 22rem;
+    /*height: 22rem;*/
+    height: 14rem;
     margin: 5rem;
     background: #ef5350;
     text-align: center;
