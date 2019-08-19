@@ -122,7 +122,6 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
 
         $.get(pokemonUrl + '/' + i, function (json) {
 
-
             var entries = json.pokemon_entries;
 
             var types;
@@ -151,6 +150,36 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
                     $('.pokemonTypes').html(typesPopup);
                     $('#pokemonDetails .popupCont').css({ 'background-image': 'url(' + json.sprites.front_default + ')', 'background-repeat': 'no-repeat', 'background-position': 'top' });
                     getEvolutionsInfo($(this));
+
+                    if (types.includes('Grass')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/grass.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Fire')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/fire.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Water')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/water.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Poison')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/poison.jpg)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Flying')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/flying.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Electric')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/electric.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Rock')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/rocks.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Psychic')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/psychic.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                    } else if (types.includes('Fighting')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/fighting.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': 'contain' });
+                    } else if (types.includes('Ground')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/ground.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': 'contain' });
+                    } else if (types.includes('Dragon')) {
+                        $('.popupContent').css({ 'background-image': 'url(./images/dragon.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': 'contain' });
+                    }
+
+                    else {
+                        $('.popupContent').css({ 'background-image': 'url(./images/normal.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': 'contain' });
+                    }
+                    console.log(types);
+                    console.log(typesPopup);
                 },
                 'pokemonId': json.id
 
