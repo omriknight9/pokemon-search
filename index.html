@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Search Pokemon</title>
@@ -19,7 +19,7 @@
 
     <div class="searchContainer">
         <h1>Search Pokemon</h1>
-        <input type="text" placeholder="Search A Pokemon" id="search" />
+        <input type="text" placeholder="Search A Pokemon" id="search" aria-label="Search" />
     </div>
 
     <div class="spinnerWrapper">
@@ -82,7 +82,10 @@
             <div class="Xbtn"></div>
             <h2 class="pokemonNamePop"></h2>
             <p class="pokemonTypes"></p>
-
+            <div class="evolutionWrapper">
+                <img src="" class="pokemonImg" id="firstEvolution" alt="pokeImg" />
+                <img src="" class="pokemonImg" id="secondEvolution" alt="pokeImg" />
+            </div>
             <div class="popupBtnsWrapper">
                 <button class="popupBtn" id="" onclick="closeCurrentPopup($(this))">Close</button>
             </div>
