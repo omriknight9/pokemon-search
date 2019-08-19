@@ -152,7 +152,7 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
                     getEvolutionsInfo($(this));
 
                     if (types.includes('Grass')) {
-                        $('.popupContent').css({ 'background-image': 'url(./images/grass.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
+                        $('.popupContent').css({ 'background-image': 'url(./images/grass2.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
                     } else if (types.includes('Fire')) {
                         $('.popupContent').css({ 'background-image': 'url(./images/fire.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': '100% 100%' });
                     } else if (types.includes('Water')) {
