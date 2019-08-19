@@ -178,8 +178,6 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
                     else {
                         $('.popupContent').css({ 'background-image': 'url(./images/normal.png)', 'background-repeat': 'no-repeat', 'background-position': 'bottom', 'background-size': 'contain' });
                     }
-                    console.log(types);
-                    console.log(typesPopup);
                 },
                 'pokemonId': json.id
 
