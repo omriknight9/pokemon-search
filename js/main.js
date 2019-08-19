@@ -150,6 +150,10 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
                     $('.pokemonNamePop').html(capitalize(json.name));
                     $('.pokemonTypes').html(typesPopup);
                     $('#pokemonDetails .popupCont').css({ 'background-image': 'url(' + json.sprites.front_default + ')', 'background-repeat': 'no-repeat', 'background-position': 'top' });
+
+                    console.log($(this));
+                    getEvolutionsInfo($(this));
+
                 },
                 'pokemonId': json.id
 
@@ -170,15 +174,15 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
 
     setTimeout(function () {
         addEvolutionChain();
-    }, 1500)
+    }, 1500);
 
     setTimeout(function () {
         getEvolutions(gen);
-    }, 3000)
+    }, 3500);
 
-    setTimeout(function () {
-        getEvolutionsInfo(gen);
-    }, 3500)
+    //setTimeout(function () {
+    //    getEvolutionsInfo(gen);
+    //}, 5000);
 }
 
 function capitalize(str) {
@@ -278,61 +282,26 @@ function getEvolutions(gen) {
     }, 0)
 }
 
-function getEvolutionsInfo(gen) {
+function getEvolutionsInfo(that) {
 
-    $.each($('.pokemonContainer'), function (key, value) {
-        var that = $(this);
+    $('#firstEvolution').attr('src', '');
+    $('#secondEvolution').attr('src', '');
 
+    var evolutionFrom = $($(that)).attr('firstEvo');
+    var evolutionTo = $($(that)).attr('secondEvo');
 
+    if (evolutionFrom !== undefined) {
+        $.get(pokemonUrl + '/' + evolutionFrom, function (json) {
 
-        if ($(that).find($('.evolutionWrapper')).length == 0) {
-            var evolutionWrapper = $('<div>', {
-                class: 'evolutionWrapper',
-            }).appendTo(that);
+            $('#firstEvolution').attr('src', json.sprites.front_default).fadeIn(500);;
+        });
+    }
 
-            var spinnerWrapper2 = $('<div>', {
-                class: 'spinnerWrapper2',
-            }).appendTo(evolutionWrapper);
-
-            var loader = $('<div>', {
-                class: 'loader2 loader-2',
-            }).appendTo(spinnerWrapper2);
-
-            var loaderOutter = $('<div>', {
-                class: 'loader-outter',
-            }).appendTo(loader);
-
-            var loaderInner = $('<div>', {
-                class: 'loader-inner',
-            }).appendTo(loader);
-        }
-
-        setTimeout(function () {
-            var evolutionTo = $($(that)).attr('firstEvo');
-            var evolutionFrom = $($(that)).attr('secondEvo');
-
-            if (evolutionFrom !== undefined) {
-                $.get(pokemonUrl + '/' + evolutionFrom, function (json) {
-
-                    var pokemonImg = $('<img>', {
-                        class: 'pokemonImg',
-                        src: json.sprites.front_default
-                    }).appendTo(evolutionWrapper).fadeIn(500);
-                })
-            }
-
-            if (evolutionTo !== undefined) {
-                $.get(pokemonUrl + '/' + evolutionTo, function (json) {
-
-                    var pokemonImg = $('<img>', {
-                        class: 'pokemonImg',
-                        src: json.sprites.front_default
-                    }).appendTo(evolutionWrapper).fadeIn(500);
-                })
-            }
-            $('.spinnerWrapper2').hide();
-        }, 2500)
-    });
+    if (evolutionTo !== undefined) {
+        $.get(pokemonUrl + '/' + evolutionTo, function (json) {
+            $('#secondEvolution').attr('src', json.sprites.front_default).fadeIn(500);;
+        })
+    }   
 }
 
 function sortChildrenDivsById(parentId) {
