@@ -548,7 +548,7 @@ h1 {
 
     .pokemonContainer {
         width: 10rem;
-        height: 15rem;
+        height: 12rem;
         margin: 1rem;
     }
 
@@ -560,5 +560,17 @@ h1 {
     #genContainer img {
         width: 40px;
         height: 40px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .pokemonContainer {
+        width: 7rem;
+        height: 9rem;
+    }
+
+    .pokemonName {
+        font-size: .8rem;
     }
 }
