@@ -304,10 +304,11 @@ function getEvolutions(gen) {
         })
     });
 
+    $('.pokemonContainer').show();
     setTimeout(function () {
         sortChildrenDivsById("container");
         $('#genContainer').css({ 'opacity': 1, 'pointer-events': 'all' });
-        $('.pokemonContainer').show();
+
         $('.spinnerWrapper').hide();
 
         //sortMovies('pokemonid');
