@@ -206,36 +206,6 @@ function getPokemons(firstPokemon, lastPokemon, gen) {
     }, 2500);
 }
 
-function sortMovies(elem1) {
-
-    var children;
-    $.each($('#container'), function (key, value) {
-        children = $(this).find('.pokemonContainer');
-        var ids = [], obj, i, len;
-
-        for (i = 0, len = children.length; i < len; i++) {
-            obj = {};
-            obj.element = children[i];
-            var elem2 = $(children[i]).attr(elem1);
-            console.log(elem2);
-            obj.idNum = parseInt(elem2.replace(/[^\d]/g, ""), 10);
-            ids.push(obj);
-        }
-
-        ids.sort(function (a, b) {
-            if (a.idNum > b.idNum) {
-                return 1;
-            } else {
-                return -1;
-            }
-        });
-
-        for (i = 0; i < ids.length; i++) {
-            $(this).append(ids[i].element);
-        }
-    });
-}
-
 function capitalize(str) {
     str = str.split(' ');
     for (var i = 0; i < str.length; i++) {
@@ -310,8 +280,6 @@ function getEvolutions(gen) {
         $('#genContainer').css({ 'opacity': 1, 'pointer-events': 'all' });
 
         $('.spinnerWrapper').hide();
-
-        //sortMovies('pokemonid');
 
         switch (gen) {
             case 2:
